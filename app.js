@@ -1,3 +1,2 @@
-const credentials = require('/credentials.js');
-
-console.log( credentials );
+// App Credentials
+const credentials = require('./credentials.json')

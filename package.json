@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/garr1s0n/portfolio-api/issues"
   },
-  "homepage": "https://github.com/garr1s0n/portfolio-api#readme"
+  "homepage": "https://github.com/garr1s0n/portfolio-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "nodemailer": "^4.1.0"
+  }
 }
