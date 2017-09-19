@@ -2,7 +2,11 @@
 API Calls for Portfolio
 
 # Credentials
-**Create File:** "credentials.js" in root.
-* **const SMTPhost** = 'smtp.yourdomain.com';
-* **const SMTPlogin** = 'email@yourdomain.com';
-* **const SMTPpw** = 'YourSMTPPassword';
+**Create File:** "credentials.json" in root.
+```
+{
+    "SMTPhost": "smtp.yourdomain.com",
+    "SMTPlogin": "email@yourdomain.com",
+    "SMTPpw": "YourSMTPPassword"
+}
+```
