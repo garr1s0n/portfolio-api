@@ -1,5 +1,14 @@
 // App Credentials
-const credentials = require('./credentials.json')
+var credentials = {}
+if (process.env.NODE && ~process.env.NODE.indexOf("heroku")) {
+  credentials = {
+    "SMTPhost": process.env.SMTPhost,
+    "SMTPlogin": process.env.SMTPlogin,
+    "SMTPpw": process.env.SMTPpw
+  }
+} else { 
+  credentials = require('./credentials.json') 
+}
 
 // App Requires
 const express = require('express');
