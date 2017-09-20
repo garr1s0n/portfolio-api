@@ -65,5 +65,7 @@ app.post('/send', (req, res) => {
   });
 });
 
+const serverPort = process.env.PORT || 8080;
+
 // Start Server
-app.listen(process.env.PORT, '0.0.0.0', () => console.log('Server started...'));
+app.listen(process.env.PORT || 8080, '0.0.0.0', () => console.log('Server started.  Running on port ' + serverPort));
