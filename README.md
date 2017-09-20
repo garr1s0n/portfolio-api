@@ -10,3 +10,4 @@ API Calls for Portfolio
     "SMTPpw": "YourSMTPPassword"
 }
 ```
+**Set Heroku Config Vars to same name/values**
