@@ -66,4 +66,4 @@ app.post('/send', (req, res) => {
 });
 
 // Start Server
-app.listen(3000, () => console.log('Server started...'));
+app.listen(process.env.PORT, '0.0.0.0', () => console.log('Server started...'));
