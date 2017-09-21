@@ -19,23 +19,28 @@ const nodemailer = require('nodemailer');
 // App Start
 const app = express();
 
+// Body Parser Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // API Root
 app.get('/', (req, res) => {
   res.send('API Root');
 });
 
 app.post('/send', (req, res) => {
+  console.log(req.body);
   const output = `
     <p>You have a new contact request!</p>
     <h3>Contact Details</h3>
     <ul>  
-      <li><b>Name:</b> Insert Name Here</li>
-      <li><b>Company:</b> Insert Company Here</li>
-      <li><b>Email:</b> Insert Email Here</li>
-      <li><b>Phone:</b> Insert Phone Here</li>
+      <li><b>Name:</b> ${req.body.name}</li>
+      <li><b>Company:</b> ${req.body.company}</li>
+      <li><b>Email:</b> ${req.body.email}</li>
+      <li><b>Phone:</b> ${req.body.phone}</li>
     </ul>
     <h3>Message</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec dapibus est. Maecenas porta ultricies nunc, a posuere lacus convallis a. Curabitur ut elementum metus.</p>
+    <p>${req.body.message}</p>
   `;
 
   // create reusable transporter object using the default SMTP transport
