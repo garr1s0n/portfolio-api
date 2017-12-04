@@ -14,10 +14,18 @@ if (process.env.NODE && ~process.env.NODE.indexOf("heroku")) {
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 const nodemailer = require('nodemailer');
 
 // App Start
 const app = express();
+
+// CORS Middleware
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
